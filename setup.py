@@ -16,7 +16,7 @@ setuptools.setup(
     name="faker-nonprofit",
     version="1.0.0",
     author="Aaron Crosman, Allison Letts, Paul Prescod",
-    author_email="DatagenToolkitTeam@invalid",
+    author_email="DatagenToolkitTeam@example.invalid",
     description="Provider for Faker which adds fake nonprofit information.",
     long_description=long_description,
     long_description_content_type="text/markdown",
