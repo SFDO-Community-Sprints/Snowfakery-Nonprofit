@@ -1,7 +1,7 @@
-# before you execute this you might need to set your 
+# before you execute this you might need to set your
 # PYTHONPATH with a command like this:
 #
-# $ PYTHONPATH=.
+# $ export PYTHONPATH=.
 # or
 # > set PYTHONPATH=.
 
