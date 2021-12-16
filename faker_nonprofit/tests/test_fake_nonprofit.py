@@ -53,6 +53,12 @@ class NonProfitProviderTestCase(unittest.TestCase):
         word_count = len(name.split())
         self.assertGreaterEqual(word_count, 2)
 
+    def test_job_titles(self):
+        """Test that the generated titles returns a valid value."""
+        title = self.provider.nonprofit_title()
+        self.assertIn(title, faker_nonprofit.JOB_TITLES,
+                      'Provided title not from list')
+
 
 if __name__ == "__main__":
     unittest.main()
