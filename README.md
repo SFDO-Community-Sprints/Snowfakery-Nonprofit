@@ -9,9 +9,11 @@ Supported by the Salesforce Open Source Commons community to work with Snowfaker
 
 Install with pip
 
-`pip install faker-edu`
+`pip install faker-nonprofit`
 
 ## Faker Use
+
+Once Faker and this provider are installed, you should be able to run the following script from any place on your system.
 
 ```python
 from faker import Faker
