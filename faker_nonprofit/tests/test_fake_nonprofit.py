@@ -27,7 +27,7 @@ class NonProfitProviderTestCase(unittest.TestCase):
         self.provider = faker_nonprofit.Provider(Generator())
 
     def test_lists_in_order(self):
-        """Test interal values are in order."""
+        """Test internal values are in order."""
         for attr_name, attr in faker_nonprofit.__dict__.items():
             with self.subTest(attr_name=attr_name):
                 if isinstance(attr, list):
