@@ -48,12 +48,12 @@ TOPICS = [
 ]
 
 SUFFIXES = [
-    'Aid Society',
     'Agency',
+    'Aid Society',
     'Alliance',
     'Association',
-    'Charities',
     'Center',
+    'Charities',
     'Coalition',
     'Committee',
     'Community',
