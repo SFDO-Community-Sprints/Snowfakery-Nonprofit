@@ -9,7 +9,6 @@ PREFIXES = [
     'Best',
     'Eastern',
     'Friends of the',
-    'Last',
     'Legal',
     'Lower',
     'Northern',
