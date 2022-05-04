@@ -59,6 +59,11 @@ class NonProfitProviderTestCase(unittest.TestCase):
         self.assertIn(title, faker_nonprofit.JOB_TITLES,
                       'Provided title not from list')
 
+    def test_foundation_name(self):
+        """Test that the generated foundation names returns a valid value."""
+        fund = self.provider.foundation_name()
+        word_count = len(fund.split())
+        self.assertGreaterEqual(word_count, 2)
 
 if __name__ == "__main__":
     unittest.main()
