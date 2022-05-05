@@ -206,7 +206,10 @@ class Provider(faker.providers.BaseProvider):
         if (nameType == 'City'):
             prefix = self.generator.city()
         elif (nameType == 'Person'):
-            prefix = self.generator.last_name()
+            if self.random_element(['Full', 'Family']) == 'Full':
+                prefix = self.generator.first_name() + ' ' + self.generator.last_name()
+            else:
+                prefix = self.generator.last_name() + ' Family'
         elif (nameType == 'State'):
             prefix = self.generator.state()
         else:
