@@ -1,6 +1,10 @@
 """Provider for Faker which adds fake nonprofit names, and program names."""
 
 import faker.providers
+from faker.generator import Generator
+import faker.providers.address.en_US
+# @todo when our more diverse provider is ready this should be replaced by that.
+import faker.providers.person.en_US
 
 PREFIXES = [
     '',
@@ -185,8 +189,33 @@ class Provider(faker.providers.BaseProvider):
         suffix = self.random_element(SUFFIXES)
         topic = self.random_element(TOPICS)
 
-        return " ".join([prefix, topic, suffix]).strip()
+        name = " ".join([prefix, topic, suffix]).strip()
+        if suffix == "Foundation" or suffix == "Fund":
+            name = self.foundation_name()
+
+        return name
 
     def nonprofit_title(self):
         """Fake nonprofit job titles."""
         return self.random_element(JOB_TITLES)
+
+    def foundation_name(self):
+        """Fake foundation names."""
+        nameType = self.random_element(['City', 'Other', 'Person', 'State'])
+        prefix = ""
+        if (nameType == 'City'):
+            prefix = self.generator.city()
+        elif (nameType == 'Person'):
+            if self.random_element(['Full', 'Family']) == 'Full':
+                prefix = self.generator.first_name() + ' ' + self.generator.last_name()
+            else:
+                prefix = self.generator.last_name() + ' Family'
+        elif (nameType == 'State'):
+            prefix = self.generator.state()
+        else:
+            prefix = " ".join([self.random_element(PREFIXES), self.random_element(TOPICS)]).strip()
+
+        suffix =self.random_element(['Foundation', 'Fund'])
+        name = " ".join([prefix, suffix]).strip()
+
+        return name
